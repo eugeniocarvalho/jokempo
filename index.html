@@ -18,7 +18,8 @@
 
   <div class="container mt-4">
     <h1 class="text-center mb-5">JOKEMPÔ</h1>
-    <p class="text-center mb-5 p-1">Pedra, papel e tesoura, também chamado em algumas regiões do Brasil de jokempô (do japonês じゃんけんぽん,
+    <p class="text-center mb-5 p-1">Pedra, papel e tesoura, também chamado em algumas regiões do Brasil de jokempô (do
+      japonês じゃんけんぽん,
       jankenpon) é um jogo de mãos recreativo e simples para duas ou mais pessoas, que não requer equipamentos nem
       habilidade.</p>
     <div class="d-flex justify-content-center">
@@ -26,67 +27,21 @@
       <img class="img-fluid mx-auto d-print-inline-block" onclick="jogar(1)" src="/src/paper.png" alt="Paper">
       <img class="img-fluid mx-auto d-print-inline-block" onclick="jogar(2)" src="/src/scissors.png" alt="Scissors">
     </div>
-    <p class="text-center mt-5">O computador já escolheu o que vai jogar, só falta você!! Para escolher basta clicar em cima da imagem!</p>
+    <p class="text-center mt-5">O computador já escolheu o que vai jogar, só falta você!! Para escolher basta clicar em
+      cima da imagem!</p>
     <p class="text-center mt-4"><strong>Boa sorte!</strong></p>
-    <div class="text-center mt-2" id="result"></div>
+
+    <div class="text-center mt-2" id="result">
+    </div>
   </div>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
+  <script src="/node_modules/jquery/dist/jquery.js"></script>
+  <script src="/node_modules/popper.js/dist/popper.js"></script>
+  <script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
 
-  <script>
-    function jogar(val) {
-      const pc = Math.floor(Math.random() * 3);
-      var result = document.querySelector('div#result')
-      var arr = ['Pedra', 'Papel', 'Tesoura']
-      var resultado
-
-      if (val === 0) {
-        if (pc === 0)
-          resultado = 'Empate'
-
-        if (pc === 1)
-          resultado = 'Perdeu'
-
-        if (pc === 2)
-          resultado = 'Ganhou'
-      }
-      else
-        if (val === 1) {
-          if (pc === 0)
-            resultado = 'Ganhou'
-
-          if (pc === 1)
-            resultado = 'Empate'
-
-          if (pc === 2)
-            resultado = 'Perdeu'
-        }
-        else
-          if (val === 2) {
-            if (pc === 0)
-              resultado = 'Perdeu'
-
-            if (pc === 1)
-              resultado = 'Ganhou'
-
-            if (pc === 2)
-              resultado = 'Empate'
-          }
-
-      result.innerHTML = `<p>${resultado}!!</p>`
-      result.innerHTML += `Você jogou <strong>${arr[val]}</strong> e o Computador jogou <strong>${arr[pc]}.</strong>`
-    }
-  </script>
+  <script src="src/js/main.js"></script>
 </body>
 
 </html>
